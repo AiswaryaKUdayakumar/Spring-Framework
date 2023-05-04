@@ -8,6 +8,7 @@ import com.UST.EmployeePracticeValidation.repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +17,7 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepo repo;
 
-    public EmployeeEntity postStud(EntityRequest request) {
+    public EmployeeEntity postStud(@Valid EntityRequest request) {
         EmployeeEntity emp = new EmployeeEntity(0L,request.getName(),request.getAge(),request.getDesignation());
         Optional<EmployeeEntity> empp = repo.findByName(emp.getName());
         if(empp.isPresent()){

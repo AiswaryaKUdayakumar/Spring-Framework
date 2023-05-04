@@ -18,7 +18,7 @@ public class EmployeeController {
     private EmployeeService services;
 
     @PostMapping("/emp1")
-    public ResponseEntity<EmployeeEntity> post(@Valid @RequestBody EntityRequest request){
+    public ResponseEntity<EmployeeEntity> postStud(@Valid @RequestBody EntityRequest request){
         return new ResponseEntity<>(services.postStud(request), HttpStatus.CREATED);
     }
 

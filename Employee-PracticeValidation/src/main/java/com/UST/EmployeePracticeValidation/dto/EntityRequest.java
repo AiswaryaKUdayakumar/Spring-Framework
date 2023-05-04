@@ -15,10 +15,10 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class EntityRequest {
 
-    @NotNull(message = "id should not be null")
-    private Long id;
+//    @NotNull(message = "id should not be null")
+
     @NotBlank(message = "name required")
-    @NotNull
+    @NotNull(message = "name required")
     private String name;
     @Min(24)
     @Max(42)
